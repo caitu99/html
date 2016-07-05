@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="积分生活, ifen, caitu99, caitu" />
+<meta name="description" content="财途积分生活，尽享每一分" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<!-- Mobile Devices Support @begin -->
+<meta content="no-cache" http-equiv="Cache-Control">
+<meta content="no-cache" http-equiv="pragma">
+<meta content="0" http-equiv="expires">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="stylesheet" href="css/caitu99_app.css" type="text/css">
+<title>常见问题反馈</title>
+</head>
+
+<body>
+<div id="faq_list">
+  <div>
+    <div class="title"><img src="images/faq_question.png"/>
+      <p>财途积分生活是干什么的？</p>
+      <img class="arrow" src="images/arrow_bottom.png" onClick="switchView(0)"></div>
+    <div class="content">
+      <p>财途积分生活是一个积分管理工具，可以将你银行、商旅、购物等所有第三方积分统一到财途集中管理，财途可以将你的积分便捷地在平台上直接消费。</p>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div>
+    <div class="title"><img src="images/faq_question.png"/>
+      <p>财途支持哪些积分的管理兑换？</p>
+      <img class="arrow" src="images/arrow_bottom.png" onClick="switchView(1)"></div>
+    <div class="content">
+      <p>财途将会支持银行、商旅、购物、餐饮等各类第三方账户，目前财途已支持银行信用卡的管理兑换。</p>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div>
+    <div class="title"><img src="images/faq_question.png"/>
+      <p>导不了邮件账单/导入出错怎么办？</p>
+      <img class="arrow" src="images/arrow_bottom.png" onClick="switchView(2)"></div>
+    <div class="content">
+      <p>目前财途已支持QQ、163邮箱，如您的账单不在上述邮箱中可联系银行客服修改账单邮箱或直接将账单邮件转发至上述邮箱。</p>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div>
+    <div class="title"><img src="images/faq_question.png"/>
+      <p>我的账户明明有积分却显示不出来？</p>
+      <img class="arrow" src="images/arrow_bottom.png" onClick="switchView(3)"></div>
+    <div class="content">
+      <p>由于部分银行邮件账单系统更新，导致用户显示积分失败，请谅解。</p>
+    </div>
+  </div>
+  <div>
+    <div class="title"><img src="images/faq_question.png"/>
+      <p>积分是怎么转成财币的？</p>
+      <img class="arrow" src="images/arrow_bottom.png" onClick="switchView(4)"></div>
+    <div class="content">
+      <p>财途推出了积分交易平台，在赚钱-积分换财币中，找到需要兑换的积分商户，选择所需兑换积分项，可通过用积分为他人预约的积分礼品买单，来获得等价财币。</p>
+    </div>
+  </div>
+  <div class="line"></div>
+</div>
+</body>
+<script>
+function switchView(opt){
+	var arrow = document.getElementsByClassName("arrow").item(opt);
+	var textView = document.getElementsByClassName("content").item(opt);
+	if(textView.style.display=="none" || textView.style.display==""){
+		arrow.src="images/arrow_up.png";
+		textView.style.display="block";
+	}else if(textView.style.display=="block"){
+		textView.style.display="none";
+		arrow.src="images/arrow_bottom.png";
+	}
+}
+</script>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="积分生活, ifen, caitu99, caitu" />
+    <meta name="description" content="财途积分生活，尽享每一分" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <!-- Mobile Devices Support @begin -->
+    <meta content="no-cache" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>财途积分生活-运营后台信息查询</title>
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script src="js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <script src="js/locales/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/queryUserInfoJs.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+
+
+    <!-- head -->
+    <div class="row clearfix" style="margin-top:20px;">
+        <div class="col-md-12 column">
+            <div class="alert alert-success alert-dismissable alert-info">
+                <h4>
+                    财途积分生活_运营后台_用户信息查询
+
+                </h4>
+                <p>运营后台信息查询<span id="welcome"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row clearfix">
+
+        <!-- left -->
+        <div class="col-md-2 column">
+            <div class="panel-group" id="panel-883738">
+                <div class="panel panel-default">
+                    <div class="panel-heading">&nbsp;</div>
+                    <div id="panel-element-890624" class="panel-collapse collapse in">
+                        <div class="panel-body"><a id="accounts_info" href="#">账户信息表</a></div>
+                        <div class="panel-body"><a id="phone_info" href="#">手机信息表</a></div>
+                        <div class="panel-body"><a id="alive_info" href="#">启动记录表</a></div>
+                        <div class="panel-body"><a id="ipgps_info" href="#">位置信息表</a></div>
+                        <div class="panel-body"><a id="in_integral_info" href="#">财币入分记录表</a></div>
+                        <div class="panel-body"><a id="out_integral_info" href="#">财币出分记录表</a></div>
+                        <div class="panel-body"><a id="total_integralchange_info" href="#">财币总量变更记录表</a></div>
+                        <div class="panel-body"><a id="integral_account_info" href="#">积分管理账户记录表</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-10 column">
+            <!-- right -->
+            <div id="UID" class="uid">
+                <span>用户ID:</span><input type="text" id="input_uid" placeholder="请输入用户ID" class="form-control1" value="1">
+            </div>
+            <div id="timebox">
+                <a href="#" id="button_query" class="btn btn-primary" >查询</a>
+
+                <div id="id_end_time" class="time-item col-md-8" style="display: none">
+                    <span style="float:left;">结束时间:</span>
+                    <div id="input_end_time_" class="input-group date form_datetime col-md-8" data-date-format="yyyy-MM-dd hh:ii:ss">
+                        <input class="form-control" type="text" id="input_end_time" placeholder="选择后查询"/>
+                        <span class="input-group-addon"> <span class="glyphicon glyphicon-th"></span></span>
+                    </div>
+                </div>
+
+                <div id="id_start_time" class="time-item col-md-8"  style="display: none">
+                    <span style="float:left;">开始时间:</span>
+                    <div id="input_start_time_" class="input-group date form_datetime col-md-8" data-date-format="yyyy-MM-dd hh:ii:ss">
+                        <input class="form-control" type="text" id="input_start_time" placeholder="选择后查询"/>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <table class="table table-bordered">
+                <thead id="t_head">
+                <tr>
+                    <th>UID</th><th>手机号</th><th>QQ号</th><th>微博号</th><th>openid</th><th>微信昵称</th>
+                </tr>
+                </thead>
+                <tbody id="t_body">
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                </tbody >
+            </table>
+            <div id="choosepages" class="col-md-8 column"  style="display:none">
+                <table>
+                    <tr >
+                        <td style="display:inline-block">
+                            当前第<span id="curPage_p">1</span>页
+                        </td>
+                        <td  style="display:inline-block">
+                            <a  href="#" id="prePage" >上一页</a>
+                            <a  href="#" id="nextPage">下一页</a>
+                        </td>
+                        <td style="display:inline-block" >
+                            转到&nbsp;<input id="changePage" type="text" size="3" />&nbsp;页
+                            <a href="#" id="skipPage">跳转</a>
+                            共<span id="totalPage_p">1</span>页
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- login modal -->
+<div id="login_modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" style="width:400px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">登录</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="account">Account</label>
+                    <input type="email" class="form-control" id="account"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <label id="message" style="margin-right: 20px; color: red;"></label>
+                <button id="submitlogin" type="button" class="btn btn-default">确认</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+    // for test
+    //$.cookie("caitu99_cookie", null, {expires: -1});
+
+    var host = "http://gateway.caitu99.com";
+    //var host = "http://localhost";
+    var loginurl = host + "/oauth/enterprise/login";
+    var tokenurl = host + "/oauth/token";
+    var apiurl = host + "/gw/oauthentry";
+
+    var curpage = 1;
+    var pagesize = 2;
+    var active = 1; //1 账户信息表 2手机信息表 3启动记录表 4位置信息表 5财币入分记录表 6财币出分记录表 7财币总量变更记录表 8积分管理账户记录表
+    var totalpage = 1;
+    var active_url = apiurl + "/backstage.userinfo/1.0/getaccountsinfo";
+
+    $(document).ready(function(){
+        $(".form_datetime").datetimepicker({
+            format: 'yyyy-mm-dd',
+            todayBtn: true,
+            autoclose: true,
+            minView:"month"
+
+        });
+        var cur_time = new Date().toLocaleDateString();
+        input_start_time.value = cur_time.replace('\/','-').replace('\/','-');
+        input_end_time.value = cur_time.replace('\/','-').replace('\/','-');
+        // check login
+        var token = $.cookie("caitu99_cookie");
+        if (token == null) {
+            $("#login_modal").modal("show");
+        }
+        $("#submitlogin").bind("click", function () {
+            $("#message").text("");
+            var account = $("#account").val();
+            var password = $("#password").val();
+
+            account = $.trim(account);
+            password = $.trim(password);
+
+            if (account == "" || password == "") {
+                $("#message").text("请输入账号密码");
+                return;
+            }
+            $.post(loginurl, {account: account, password: password}, function (result) {
+                if (result.code != 0) {
+                    $("#message").text(result.message);
+                    return;
+                }
+
+                $.post(tokenurl, {grant_type: "password", client_id: result.data.clientId,  client_secret: result.data.clientSecret, username: account, password: password, type: 4}, function (result) {
+                    if(result.access_token) {
+                        $.cookie('caitu99_cookie', result.access_token, {expires: 7});
+                    } else {
+                        $("#message").text(result.error_description);
+                        return;
+                    }
+                    $("#login_modal").modal("hide");
+                    $("#accounts_info").click();
+                });
+            });
+
+        });
+        post_accounts_info();
+        //账户信息
+        $("#accounts_info").bind("click",post_accounts_info)
+
+        //手机信息
+        $("#phone_info").bind("click", function() {
+            //change params
+            if( 2 != active ){
+                active_url = apiurl + "/backstage.userinfo/1.0/getphoneinfo";
+                active = 2;
+            }
+            post_phone_info();
+        })
+
+        //启动记录信息
+        $("#alive_info").bind("click", function() {
+             //change params
+            if( 3 != active ){
+                active_url = apiurl + "/backstage.userinfo/1.0/getaliveinfo";
+                active = 3;
+            }
+            post_alive_info();
+        })
+
+        //位置信息表
+        $("#ipgps_info").bind("click", function() {
+            //change params
+            if( 4 != active ){
+                active_url = apiurl + "/backstage.userinfo/1.0/getipgpsinfo";
+                active = 4;
+            }
+            post_ipgps_info();
+        })
+
+        //财币入分记录表
+        $("#in_integral_info").bind("click", function() {
+            //change params
+            if( 5 != active ){
+                active_url = apiurl + "/backstage.userinfo/1.0/getinintegralinfo";
+                active = 5;
+            }
+            post_in_integral_info();
+        })
+
+        //财币出分记录表
+        $("#out_integral_info").bind("click", function() {
+            //change params
+            if( 6 != active ){
+                active_url = apiurl + "/backstage.userinfo/1.0/getoutintegralinfo";
+                active = 6;
+            }
+            post_out_integral_info();
+        });
+
+        //财币总量变更记录表
+        $("#total_integralchange_info").bind("click", function() {
+            //change params
+            if( 7 != active ){
+                active_url = apiurl + "/backstage.userinfo/1.0/gettotalintegralchangeinfo";
+                active = 7;
+            }
+            post_total_integralchange_info();
+        });
+
+        //积分管理账户记录
+        $("#integral_account_info").bind("click", function() {
+            //change params
+            if( 8 != active ){
+                active_url = apiurl + "/backstage.userinfo/1.0/getintegralaccountinfo";
+                active = 8;
+            }
+            post_integral_account_info();
+        });
+
+
+/**
+        //上一页
+        $("#prePage").bind("click", function() {
+            if( active == 1 || active == 2)
+                return;
+
+            // check login
+            var token = $.cookie("caitu99_cookie");
+            if (token == null) {
+                $("#login_modal").modal("show");
+            }
+
+            //check params
+            if(curpage > 1){
+                curpage =  Number(curpage) - 1;
+            }else{
+                curpage = 1;
+            }
+            if( active == 3 ){
+                post_user_info(curpage);
+            }
+        });
+
+        //下一页
+        $("#nextPage").bind("click", function() {
+            if( active == 1 || active == 2 )
+                return;
+
+            if( curpage == totalpage ){
+                return;
+            }
+            // check login
+            var token = $.cookie("caitu99_cookie");
+            if (token == null) {
+                $("#login_modal").modal("show");
+            }
+            //check params
+            if(curpage >= 1){
+                curpage =  Number(curpage) + 1;
+            }else{
+                curpage = 1;
+            }
+            if( active == 3 ){
+                post_user_info(curpage);
+            }
+
+        });
+
+        //跳转到指定页数
+        $("#skipPage").bind("click", function() {
+            if( active == 1 || active == 2 )
+                return;
+
+            // check login
+            var token = $.cookie("caitu99_cookie");
+            if (token == null) {
+                $("#login_modal").modal("show");
+            }
+
+            curpage = eval(document.getElementById('changePage')).value;
+            if( active == 3 ){
+                post_user_info(curpage);
+            }
+        });
+ */
+        //查询
+        $("#button_query").bind("click", function() {
+            button_query_fun();
+        });
+
+
+    });
+
+    function button_query_fun()
+    {
+        if( active == 1 ){
+            post_accounts_info();
+        }else if( active == 2 ){
+            post_phone_info();
+        }else if( active == 3 ){
+            post_alive_info();
+        }else if( active == 4 ){
+            post_ipgps_info();
+        }else if( active == 5 ){
+            post_in_integral_info();
+        }else if( active == 6 ){
+            post_out_integral_info();
+        }else if( active == 7 ){
+            post_total_integralchange_info();
+        }else if( active == 8 ){
+            post_integral_account_info();
+        }
+    }
+
+    function tofail(result){
+        //5110
+        if(result.code=='5110'){
+            alert("登录超时，点击确定重新登录！");
+            $("#login_modal").modal("show");
+            //$.cookie.removeCookie()
+        }else{
+            alert(result.message);
+        }
+    }
+
+    function myfun(data){
+        if(data == undefined || data == '')
+            return "无";
+        return data;
+    }
+
+    $('.panel-body a').click(function(){
+
+        if( ($(this).attr('id') == 'alive_info') || ($(this).attr('id') == 'ipgps_info') || ($(this).attr('id') == 'in_integral_info') || ($(this).attr('id') == 'out_integral_info')
+                || ($(this).attr('id') == 'total_integralchange_info') || ($(this).attr('id') == 'integral_account_info') )  {
+            $('#id_end_time').show();
+            $('#id_start_time').show();
+        }else {
+            $('#id_end_time').hide();
+            $('#id_start_time').hide();
+        }
+
+
+    });
+
+
+</script>
+

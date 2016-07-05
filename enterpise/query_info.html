@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="keywords" content="积分生活, ifen, caitu99, caitu" />
+		<meta name="description" content="财途积分生活，尽享每一分" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<!-- Mobile Devices Support @begin -->
+		<meta content="no-cache" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="0" http-equiv="expires">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- apple devices fullscreen -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<title>财途积分生活-企业信息查询</title>
+				
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">	
+		<link rel="stylesheet" href="css/style.css">	
+		<link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+		
+		
+		<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="../js/jquery.cookie.js"></script>
+		<script src="js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+		<script src="js/locales/bootstrap-datetimepicker.zh-CN.js" type="text/javascript"></script>
+
+
+		<style>
+			.table{
+				overflow-x: auto;;
+				width:100%;
+			    display: block;
+			}
+			
+			
+		</style>	
+	</head>
+
+	<body>
+		<div class="container">
+
+
+			<!-- head -->
+			<div class="row clearfix" style="margin-top:20px;">
+				<div class="col-md-12 column">
+					<div class="alert alert-success alert-dismissable alert-info">
+						<h4>
+							财途积分生活
+							
+						</h4> 
+						<p>企业信息查询<span id="welcome">欢迎，unionpay999</span></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+
+				<!-- left -->
+				<div class="col-md-2 column">
+					<div class="panel-group" id="panel-883738">
+						<div class="panel panel-default">
+							<div class="panel-heading">&nbsp;</div>
+							<div id="panel-element-890624" class="panel-collapse collapse in">
+								<div class="panel-body"><a id="account_info" href="#">账户信息</a></div>
+								<div class="panel-body"><a id="account_detail" href="tran_info.html">账户明细</a></div>
+                               <!--  <div class="panel-body"><a id="tran_info" href="#">交易明细</a></div>
+								<div class="panel-body"><a id="order_query" href="#">充值交易查询</a></div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+				<div class="col-md-10 column">
+					<!-- right -->
+					<div id="timebox" style="display:none;">
+					
+						
+							<a href="#" id="button_query" class="btn btn-primary" >查询</a>
+						
+					
+						<div class="time-item col-md-8">
+							<span style="float:left;">结束时间:</span>
+							<div id="input_end_time_" class="input-group date form_datetime col-md-8" data-date-format="yyyy-MM-dd hh:ii:ss">		
+								<input class="form-control" type="text" id="input_end_time" placeholder="选择后查询"/>
+								<span class="input-group-addon"> <span class="glyphicon glyphicon-th"></span></span>
+							</div>
+						</div>
+						
+						<div class="time-item col-md-8">
+							<span style="float:left;">开始时间:</span>
+							<div id="input_start_time_" class="input-group date form_datetime col-md-8" data-date-format="yyyy-MM-dd hh:ii:ss">
+								<input class="form-control" type="text" id="input_start_time" placeholder="选择后查询"/>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+							</div>
+						</div>
+						
+					</div>
+					
+					
+					<div id="options" style="display:none;">
+						
+						<a href="#" id="button_query_numbers" class="btn btn-primary" >查询</a>
+						
+						<div class="col-md-3">
+							<span>流水号: </span><input type="text" id="input_thirdNo" class="form-control" placeholder="填写后即可查询"/>
+						</div>
+						
+						<div class="col-md-3">
+							<span>订单号: </span><input type="text" id="input_orderNo" class="form-control" placeholder="填写后即可查询"/>
+						</div>
+						
+						<div class="col-md-3">
+							<span>手机号: </span><input type="text" id="input_mobile" class="form-control" placeholder="填写后即可查询" maxlength="11" />
+						</div>
+						
+					</div>
+					
+				
+					<table class="table table-bordered">
+						<thead id="t_head">
+							<tr>
+								<th>总笔数</th>
+								<th>总金额</th>
+								<th>成功笔数</th>
+								<th>成功金额</th>
+								<th>失败笔数</th>
+								<th>失败金额</th>
+								<th>处理中笔数</th>	
+								<th>处理中金额</th>																
+							</tr>
+						</thead>
+						<tbody id="t_body">
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<div id="choosepages" class="col-md-8 column"  style="display:none"> 
+						<table> 
+							<tr >
+								<td style="display:inline-block">
+								当前第<span id="curPage_p">1</span>页
+								</td>
+								<td  style="display:inline-block">
+									<a  href="#" id="prePage" >上一页</a>
+									<a  href="#" id="nextPage">下一页</a>
+								</td>
+								<td style="display:inline-block" >
+									转到&nbsp;<input id="changePage" type="text" size="3" />&nbsp;页
+									<a href="#" id="skipPage">跳转</a>
+									共<span id="totalPage_p">1</span>页
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- login modal -->
+		<div id="login_modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog" style="width:400px;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title">登录</h3>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="account">Account</label>
+							<input type="email" class="form-control" id="account"/>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" class="form-control" id="password"/>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<label id="message" style="margin-right: 20px; color: red;"></label>
+						<button id="submitlogin" type="button" class="btn btn-default">确认</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+
+	</body>
+</html>
+
+<script type="text/javascript">
+
+    //for test
+    //$.cookie("caitu99_cookie", null, {expires: -1});
+
+    var host = "http://p.gateway.caitu99.com";
+	//var host = "http://localhost";
+    var loginurl = host + "/oauth/enterprise/login";
+    var tokenurl = host + "/oauth/token";
+    var apiurl = host + "/gw/oauthentry";
+    
+	var curpage = 1;
+	var pagesize = 10;
+	var active = 1; //1 账户信息 2账户明细 3交易明细 4充值交易查询
+	var totalpage = 1;
+	var active_url = apiurl + "/enterprise.account/1.0/info";
+	
+    $(document).ready(function(){	
+		$(".form_datetime").datetimepicker({
+		format: 'yyyy-mm-dd',
+		todayBtn: true,
+		autoclose: true,
+		minView:"month"
+		
+		});
+        // check login
+        var token = $.cookie("caitu99_cookie");
+        if (token == null) {
+            $("#login_modal").modal("show");
+        }
+        $("#submitlogin").bind("click", function () {
+            $("#message").text("");
+            var account = $("#account").val();
+            var password = $("#password").val();
+
+            account = $.trim(account);
+            password = $.trim(password);
+
+            if (account == "" || password == "") {
+                $("#message").text("请输入账号密码");
+                return;
+            }
+            $.post(loginurl, {account: account, password: password}, function (result) {
+                if (result.code != 0) {
+                    $("#message").text(result.message);
+                    return;
+                }
+
+                $.post(tokenurl, {grant_type: "password", client_id: result.data.clientId,  client_secret: result.data.clientSecret, username: account, password: password, type: 4}, function (result) {
+                    if(result.access_token) {
+                        $.cookie('caitu99_cookie', result.access_token, {expires: 7});
+                    } else {
+                        $("#message").text(result.error_description);
+                        return;
+                    }
+                    $("#login_modal").modal("hide");
+                    $("#account_info").click();
+                });
+            });
+
+        });
+		queryAccount();
+		//账户信息
+        $("#account_info").bind("click",queryAccount)
+		
+		//账户明细
+		$("#account_detail").bind("click", function() {
+			// check login
+				
+
+		})
+		
+		//交易明细
+		$("#tran_info").bind("click", function() {
+			// check login
+			var token = $.cookie("caitu99_cookie");
+            if (token == null) {
+                $("#login_modal").modal("show");
+            }
+		
+			//change params 
+			if( 3 != active ){
+				active_url = apiurl + "/enterprise.tran/1.0/detail";
+				active = 3;//1 账户信息 2账户明细 3交易明细
+				curpage = 1;
+			}
+			
+			$("#t_head").html("<tr><th>交易信息</th><th>状态</th><th>交易财分</th><th>类型</th><th>创建时间</th></tr>");
+			$("#t_body").html("<tr><th></th><th></th><th></th><th></th><th></th></tr>");
+			
+			var start_time = input_start_time.value;
+			var end_time = input_end_time.value;
+			if( start_time!='' && end_time!=''){
+				start_time = start_time + ' 00:00:00';
+				end_time = end_time + ' 23:59:59';
+				post_tran_info(curpage,pagesize);
+			}
+		})
+		
+		//充值交易查询
+		$("#order_query").bind("click", function() {
+			// check login
+			var token = $.cookie("caitu99_cookie");
+            if (token == null) {
+                $("#login_modal").modal("show");
+            }
+			
+			//change params 
+			if( 4 != active ){
+				active_url = apiurl + "/integral.unionpay.order/1.0/query";
+				active = 4;//1 账户信息 2账户明细 3交易明细 4充值交易查询
+				curpage = 1;
+			}
+			
+			$("#t_head").html("<tr><th>订单号</th><th>流水号</th><th>手机号</th><th>交易财分</th><th>状态</th><th>交易时间</th></tr>");
+			$("#t_body").html( "<tr><th></th><th></th><th></th><th></th><th></th><th></th></tr>" );
+			
+			var mobile = input_mobile.value.replace(' ','');
+			var thirdno = input_orderNo.value.replace(' ','');
+			var orderno= input_thirdNo.value.replace(' ','');
+			if( mobile != '' || thirdno != '' || orderno != ''){
+				post_order_query(curpage,pagesize);
+			}
+		})
+		
+		//上一页
+		$("#prePage").bind("click", function() {
+			if( active == 1)
+				return;
+		
+			// check login
+			var token = $.cookie("caitu99_cookie");
+            if (token == null) {
+                $("#login_modal").modal("show");
+            }
+			
+			//check params
+			if(curpage > 1){
+				curpage =  Number(curpage) - 1;
+			}else{
+				curpage = 1;
+			}
+			if( active == 2 || active == 3){
+				var start_time = input_start_time.value;
+				var end_time = input_end_time.value;
+				if( start_time == ""){
+					alert("请选择开始时间");
+					return;
+				}else if( end_time == "" ){
+					alert("请选择结束时间");
+					return;
+				}
+				
+				start_time = start_time + ' 00:00:00';
+				end_time = end_time + ' 23:59:59';
+				
+				if( active == 2){
+					post_account_detail(curpage,pagesize);
+				}else if( active == 3){
+					post_tran_info(curpage,pagesize);
+				}			
+			}else if( active == 4 ){
+				post_order_query(curpage,pagesize);
+			}
+		});
+		
+		//下一页
+		$("#nextPage").bind("click", function() {
+			if( active == 1)
+				return;
+			
+			if( curpage == totalpage ){
+				return;
+			}
+			// check login
+			var token = $.cookie("caitu99_cookie");
+            if (token == null) {
+                $("#login_modal").modal("show");
+            }
+			//check params
+			if(curpage >= 1){
+				curpage =  Number(curpage) + 1;
+			}else{
+				curpage = 1;
+			}
+			if( active == 2 || active == 3){
+				var start_time = input_start_time.value;
+				var end_time = input_end_time.value;
+				if( start_time == ""){
+					alert("请选择开始时间");
+					return;
+				}else if( end_time == "" ){
+					alert("请选择结束时间");
+					return;
+				}
+				
+				start_time = start_time + ' 00:00:00';
+				end_time = end_time + ' 23:59:59';
+				
+				if( active == 2){
+					post_account_detail(curpage,pagesize);
+				}else if( active == 3){
+					post_tran_info(curpage,pagesize);
+				}			
+			}else if( active == 4 ){
+				post_order_query(curpage,pagesize);
+			}
+			
+		});
+		
+		//跳转到指定页数
+		$("#skipPage").bind("click", function() {
+			if( active == 1)
+				return;
+		
+			// check login
+			var token = $.cookie("caitu99_cookie");
+            if (token == null) {
+                $("#login_modal").modal("show");
+            }
+
+			curpage = eval(document.getElementById('changePage')).value;
+			if( active == 2 || active == 3){
+				//check params
+				if( isNaN(curpage) || curpage == '' || curpage == undefined){
+				alert('请输入正确的页数');
+				return;
+				}
+				var start_time = input_start_time.value;
+				var end_time = input_end_time.value;
+				if( start_time == ""){
+					alert("请选择开始时间");
+					return;
+				}else if( end_time == "" ){
+					alert("请选择结束时间");
+					return;
+				}
+				
+				start_time = start_time + ' 00:00:00';
+				end_time = end_time + ' 23:59:59';
+				
+				if( active == 2){
+					post_account_detail(curpage,pagesize);
+				}else if( active == 3){
+					post_tran_info(curpage,pagesize);
+				}
+	
+			}else if( active == 4){
+				post_order_query(curpage,pagesize);			
+			}
+		});
+		
+		//查询
+		$("#button_query").bind("click", function() {
+			button_query_fun(curpage,pagesize);
+		});
+		$("#button_query_numbers").bind("click", function() {
+			button_query_fun(curpage,pagesize);
+		});
+		
+
+    });
+	
+	
+	function queryAccount(){
+	     // check login
+		var token = $.cookie("caitu99_cookie");
+		if (token == null) {
+			$("#login_modal").modal("show");
+		}
+		//change params 
+		if( 1 != active ){
+			active_url = apiurl + "/enterprise.account/1.0/info";
+			active = 1;//1 账户信息 2账户明细 3交易明细 4充值交易查询
+			curpage = 1;
+		}
+
+		var enterprise = apiurl + "/enterprise.account/1.0/info";
+		//var enterprise = "/api/transaction/enterprise/account/info/1.0";
+		
+		
+		$.post(enterprise, {access_token: token}, function (result) {
+			 $("#t_head").html("<tr><th>总笔数</th><th>总金额</th><th>成功笔数</th><th>成功金额</th><th>失败笔数</th><th>失败金额</th><th>处理中笔数</th><th>处理中金额</th></tr>");
+			 	var	str = "<tr><td>" + result.countA + "</td>"
+			 			+ "<td>" + result.sumA + "</td>"
+			 			+ "<td>" + result.countB + "</td>"
+			 			+ "<td>" + result.sumB + "</td>"
+			 			+ "<td>" + result.countC + "</td>"
+			 			+ "<td>" + result.sumC + "</td>"
+			 			+ "<td>" + result.countD + "</td>"
+			 			+ "<td>" + result.sumD + "</td></tr>";
+			 			
+			 $("#t_body").html(str);        		
+		});
+	}
+	
+	function button_query_fun(curpage,pagesize)
+	{
+		if( active == 2){
+			post_account_detail(curpage,pagesize);
+		}else if( active ==3){
+			post_tran_info(curpage,pagesize);
+		}else if( active == 4){
+			post_order_query(curpage,pagesize);
+		}
+	}
+	
+	//账户明细查询方法
+	function post_account_detail(curpage,pagesize)
+	{
+		var token = $.cookie("caitu99_cookie");
+        if (token == null) {
+            $("#login_modal").modal("show");
+        }
+		
+		// check params
+		var start_time = input_start_time.value;
+		var end_time = input_end_time.value;
+		if( start_time == ""){
+			alert("请选择开始时间");
+			return;
+		}else if( end_time == "" ){
+			alert("请选择结束时间");
+			return;
+		}
+		
+		start_time = start_time + ' 00:00:00';
+		end_time = end_time + ' 23:59:59';
+		
+		
+		var accountDetailUrl = "/api/transaction/enterprise/account/detail/1.0";
+		//var accountDetailUrl = apiurl + "/enterprise.account/1.0/detail";
+		
+		console.log(start_time);
+		console.log(end_time);
+		console.log(accountDetailUrl);
+		
+		$.post(accountDetailUrl, {access_token: token, startDate:start_time, endDate:end_time, curpage:curpage, pagesize:pagesize}, function (result) {
+			if(result.code == 0){
+				
+				
+				var t_head = "<tr><th>订单号</th><th>交易流水号</th><th>提交日期</th>"
+						   + "<th>清算日期</th><th>银行账号</th><th>银行户名</th><th>业务商户</th><th>业务名称</th>"
+						   + "<th>交易金额（元）</th><th>手续费</th><th>处理状态</th><th>交易结果</th><th>退汇状态</th></tr>"
+				
+				$("#t_head").html(t_head);
+				$("#t_body").html( ergodic_account_detail_data(result.data) );		
+			}else{
+				tofail(result);
+			}
+        });
+
+	}
+	
+	//交易明细查询方法
+	function post_tran_info(curpage,pagesize)
+	{
+		var token = $.cookie("caitu99_cookie");
+        if (token == null) {
+            $("#login_modal").modal("show");
+        }
+		
+		// check params
+		var start_time = input_start_time.value;
+		var end_time = input_end_time.value;
+		if( start_time == ""){
+			alert("请选择开始时间");
+			return;
+		}else if( end_time == "" ){
+			alert("请选择结束时间");
+			return;
+		}
+		
+		start_time = start_time + ' 00:00:00';
+		end_time = end_time + ' 23:59:59';
+
+		$.post(apiurl + "/enterprise.tran/1.0/detail", {access_token: token, start_time:start_time, end_time:end_time, curpage:curpage, pagesize:pagesize}, function (result) {
+			if(result.code == 0){
+				$("#t_head").html("<tr><th>交易信息</th><th>状态</th><th>交易财分</th><th>类型</th><th>创建时间</th></tr>");
+				$("#t_body").html( ergodic_tran_info_data(result.data) );
+			}else{
+				tofail(result);
+			}
+		});
+
+	}
+	
+	//充值交易查询方法
+	function post_order_query(curpage,pagesize)
+	{
+		var token = $.cookie("caitu99_cookie");
+        if (token == null) {
+            $("#login_modal").modal("show");
+        }
+		var mobile = input_mobile.value.replace(' ','');
+		var thirdno = input_orderNo.value.replace(' ','');
+		var orderno= input_thirdNo.value.replace(' ','');
+		$.post(apiurl + "/integral.unionpay.order/1.0/query", {access_token: token, mobile:mobile,orderNo:orderno,serialNo:thirdno, pageSize:pagesize,curPage:curpage}, function (result) {
+			if(result.code == 0){
+				$("#t_head").html("<tr><th>订单号</th><th>流水号</th><th>手机号</th><th>交易财分</th><th>状态</th><th>交易时间</th></tr>");
+				$("#t_body").html( ergodic_order_query_data(result.data) );
+			}else{
+				tofail(result);
+			}	
+        });
+	}
+	
+	function tofail(result){
+		//5110
+		if(result.code=='5110'){
+			alert("登录超时，点击确定重新登录！");
+			$("#login_modal").modal("show");
+			//$.cookie.removeCookie()
+		}else{
+			alert(result.message);
+		}
+	}
+	
+	//交易明细解析方法
+	function ergodic_tran_info_data(data)
+	{
+		var result = "";
+		var datas = data.datas;
+		for(var o in datas){   
+			result = result + "<tr>";
+			result = result + "<td>" +  datas[o].info + "</td>";
+			result = result + "<td>" +  datas[o].statusstr + "</td>";
+			result = result + "<td>" +  datas[o].totalstr + "</td>";
+			result = result + "<td>" +  datas[o].typestr + "</td>";
+			result = result + "<td>" +  datas[o].createTime + "</td>";
+			result = result + "</tr>";
+		} 
+		curpage = data.curPage;
+		totalpage = data.totalPage;
+		document.getElementById("curPage_p").innerHTML = curpage;
+		document.getElementById("totalPage_p").innerHTML = totalpage;
+		return result;
+	}
+	
+	//账户明细解析方法
+	function ergodic_account_detail_data(data)
+	{
+		var result = "";
+		var datas = data.datas;
+		
+		for(var o in datas){
+			console.log(datas[o]);
+			result = result + "<tr>"
+				   + "<td>" +  datas[o].orderNo + "</td>"
+				   + "<td>" +  datas[o].transactionNumber + "</td>"
+				   + "<td>" +  datas[o].createTimeString + "</td>"
+				   + "<td>" +  datas[o].createTimeString + "</td>"
+				   + "<td>" +  datas[o].accNo + "</td>"
+				   + "<td>" +  datas[o].accName + "</td>"
+				   + "<td>" +  "银联智惠信息服务（上海）有限公司" + "</td>"
+				   + "<td>" +  "" + "</td>"
+				   + "<td>" +  datas[o].total + "</td>"
+				   + "<td>" +  datas[o].fee + "</td>"
+				   + "<td>" +  datas[o].status + "</td>"
+				   + "<td>" +  "" + "</td>"
+				   + "<td>" +  "" + "</td>"
+				   + "</tr>";			
+		} 
+		curpage = data.curPage;
+		totalpage = data.totalPage;
+		document.getElementById("curPage_p").innerHTML = curpage;
+		document.getElementById("totalPage_p").innerHTML = totalpage;
+		return result;
+	}
+	
+	//充值交易解析方法
+	function ergodic_order_query_data(data)
+	{
+		var result = "";
+		var datas = data.datas;
+		for(var o in datas){
+			if( datas[o].status == 2 ){
+				datas[o].status = "成功";
+			}else if( datas[o].status == 1 ){
+				datas[o].status = "处理中";
+			}else if( datas[o].status == 0 ){
+				datas[o].status = "冻结";
+			}else if( datas[o].status == -1 ){
+				datas[o].status = "失败";
+			}
+			result = result + "<tr>";
+			result = result + "<td>" +  datas[o].thirdNo + "</td>";
+			result = result + "<td class=\"fixed-width\">" +  datas[o].orderNo+ "</td>";
+			result = result + "<td>" +  datas[o].mobile + "</td>";				
+			result = result + "<td>" +  datas[o].integral + "</td>";
+			result = result + "<td>" +  datas[o].status + "</td>";
+			result = result + "<td>" +  datas[o].createTime + "</td>";					
+			result = result + "</tr>";			
+		} 
+		curpage = data.curPage;
+		totalpage = data.totalPage;
+		document.getElementById("curPage_p").innerHTML = curpage;
+		document.getElementById("totalPage_p").innerHTML = totalpage;
+		return result;
+	}
+	
+	$('.panel-body a').click(function(){
+	
+		if( ($(this).attr('id') == 'account_detail') || ($(this).attr('id') == 'tran_info') )  {
+			$('#timebox').show();	
+		}else {
+			$('#timebox').hide();
+		}
+		
+		if($(this).attr('id') == 'order_query' ) {
+			$('#options').show();
+		}else{
+			$('#options').hide();
+		}
+		
+		if( ($(this).attr('id') == 'account_detail') || ($(this).attr('id') == 'tran_info')  || ($(this).attr('id') == 'order_query') ) {
+			$('#choosepages').show();
+		}else{
+			$('#choosepages').hide();
+		}
+		
+	});
+
+</script>

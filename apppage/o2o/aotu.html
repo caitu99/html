@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>凹凸租车</title>
+<meta name="keywords" content="积分生活, ifen, caitu99, 助家" />
+<meta name="description" content="财途积分生活，尽享每一分" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<!-- Mobile Devices Support @begin -->
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Mobile Devices Support @end -->
+<link href="css/caitu99_app.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/responsiveslides.min.js"></script>
+<script type="text/javascript" 	src="js/jquery.smint.js"></script>
+</head>
+<body onload="doResize()" onresize="doResize()">
+<header>
+  <div id="sliderbox" class="slide_container">
+    <ul class="rslides" id="slider">
+      <li> <img src="images/aotuzuche.png" alt="">
+        <p class="caption">凹凸共享租车：200元租车券（可抵租金与保费)</p>
+      </li>
+    </ul>
+  </div>
+  <div id="paybox" class="checkbtn">
+    <div class="paytext">
+      <p>体验价：</p><p style="font-size:2em;color:#ed3f00; line-height:1.35em">10&nbsp;</p><p>财分</p>
+    </div>
+    <div class="ui-btn"> <a style="text-decoration:none;" href="#" onClick="getTicket()">立即兑换</a> </div>
+  </div>
+</header>
+<div class="divider"></div>
+<div class="content" >
+  <div class="content_block">
+    <div class="content_title" >商品简介：</div>
+    <div class="content_line"></div>
+    <div class="content_text"> 200元共享租车券：
+      <li><p>可直接抵用租金与保险费，用于首次租车使用</p></li>
+      <li><p>提供全方位保险</p></li>
+      <li><p>提供7*24小时客户支持与道路救援服务，节假日代金券均可使用</p></li>
+  	  <li><p>车辆的信息和所有证照齐全且有效，车辆为10年或30万公里内</p></li>
+  	  <br/>
+      <p>提供商: 凹凸共享租车<br />
+        用互联网的模式打造细致贴心快捷的租车服务!</p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<div class="content">
+  <div class="content_block">
+    <div class="content_title">兑换需知：</div>
+    <div class="content_line"></div>
+    <div class="content_text">
+      <p><span>使用范围<br />
+        </span>全国十三个城（上海、北京、杭州、南京、广州、深圳、重庆、海口、青岛、成都、西安、三亚</p>
+      <p><span>兑换有效期<br />
+        </span>兑换之日起三个月内有效</p>
+      <p><span>兑换流程<br />
+        </span>1、用户点击（立即兑换）获得（兑换码）；<br />
+        2、下载凹凸共享租车App  -> 手机注册账户→点击我是租客→钱包→充值→输入（兑换码）获得200元租车券（可抵扣租金与保险费）；<br />
+        3、上传证件审核通过，就可以选择您喜欢的爱车，开启您的租车之旅。</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="divider"></div>
+<div class="content">
+  <div class="content_block">
+    <div class="content_title">注意事项：</div>
+    <div class="content_line"></div>
+    <div class="content_text">
+      <p style="color:#8c8c8c">1、此代金券仅供凹凸共享租车新注册用户使用（可抵
+   扣租金与保险费）；<br />
+        2、本券不得兑换现金、不找零；<br />
+        3、本券每个订单仅限使用一张，不与其他优惠同时享
+   受；<br />
+        4、本券最终解释权归凹凸共享租车所有，如有疑问请
+   咨询客服400-668-0202（15356690801）；<br />
+        		5、 本活动奖品由本应用及凹凸共享租车提供。<br />
+        </p>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+$(function () {
+    $("#slider").responsiveSlides({
+    auto: true,
+    pager: false,
+    nav: true,
+    speed: 500,
+    // 对应外层div的class : slide_container
+    namespace: "slide"
+    });
+});
+</script>
+<script type="text/javascript">
+    //调用原生app方法
+    function getTicket()
+    {
+	    window.location.href= "http://www.caitu99.com";
+        caitu_o2o.getTicket("同城租车半小时送达");//注意此处的caitu_o2o要和外部传入的名字一致，大小写正确
+    }
+	
+	function doResize(){
+		var h = $("#sliderbox").height();
+		$("#paybox").css('top',h);
+		$('.checkbtn').smint({
+    	'scrollSpeed' : 1000
+    });
+	}
+</script>
+</html>

@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>e袋洗</title>
+<meta name="keywords" content="积分生活, ifen, caitu99, 助家" />
+<meta name="description" content="财途积分生活，尽享每一分" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<!-- Mobile Devices Support @begin -->
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Mobile Devices Support @end -->
+<link href="css/caitu99_app.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/responsiveslides.min.js"></script>
+<script type="text/javascript" 	src="js/jquery.smint.js"></script>
+</head>
+<body onload="doResize()" onresize="doResize()">
+<header>
+  <div id="sliderbox" class="slide_container">
+    <ul class="rslides" id="slider">
+      <li> <img src="images/edaixi.png" alt="">
+        <p class="caption">e袋洗：最高19元洗衣代金券</p>
+      </li>
+    </ul>
+  </div>
+  <div id="paybox" class="checkbtn">
+    <div class="paytext">
+      <p>体验价：</p><p style="font-size:2em;color:#ed3f00; line-height:1.35em">10&nbsp;</p><p>财分</p>
+    </div>
+    <div class="ui-btn"> <a style="text-decoration:none;" href="#" onClick="getTicket()">立即兑换</a> </div>
+  </div>
+</header>
+<div class="divider"></div>
+<div class="content" >
+  <div class="content_block">
+    <div class="content_title" >商品简介：</div>
+    <div class="content_line"></div>
+    <div class="content_text">O2O洗衣服务：
+      <li><p>e袋洗新用户19元代金券，老用户5元代金券</p></li>
+      <li><p>在线下单，上门取物</p></li>
+      <li><p>72小时内送回，极速安全</p></li>
+      <p>提供商：e袋洗【www.edaixi.com】<br />
+        安全、便捷、极速的洗衣服务</p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<div class="content">
+  <div class="content_block">
+    <div class="content_title">兑换需知：</div>
+    <div class="content_line"></div>
+    <div class="content_text">
+      <p><span>使用范围<br />
+        </span>全国主要城市（详见e袋洗App）</p>
+      <p><span>兑换有效期<br />
+        </span>兑换之日起7天内有效</p>
+      <p><span>兑换流程<br />
+        </span>1、用户点击【立即兑换】，输入支付密码，跳转到优惠券兑换页面；<br />
+        2、输入手机号，点击【立即获取】；<br />
+        3、下载<a href="http://www.edaixi.com/">e袋洗App</a>  → 手机号登录  → 进入首页选择合适项目  → 填写地址及取件时间并下单  → 上门取件时点击付款  → 选择优惠券  → 完成付款；</p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<div class="content">
+  <div class="content_block">
+    <div class="content_title">注意事项：</div>
+    <div class="content_line"></div>
+    <div class="content_text">
+      <p style="color:#8c8c8c">1、本代金券需要满指定金额才可抵扣（新用户满30减19，老用户满20减5）；<br />
+        2、每用户限兑换一张优惠券；<br />
+        3、优惠券不找零、不兑现，过期自动失效；<br />
+        4、高端衣物精洗周期为5天，高端家纺精洗周期为7天；<br />
+        5、本券最终解释权归e袋洗所有，如有疑问请咨询客服400-818-7171；<br />
+        6、本代金券由本应用及e袋洗提供，与苹果公司及其它设备生产方无关；</p>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+$(function () {
+    $("#slider").responsiveSlides({
+    auto: true,
+    pager: false,
+    nav: true,
+    speed: 500,
+    // 对应外层div的class : slide_container
+    namespace: "slide"
+    });
+});
+</script>
+<script type="text/javascript">
+    //调用原生app方法
+    function getTicket()
+    {
+	    window.location.href= "http://www.caitu99.com";
+        caitu_o2o.getTicket("10财分兑换获取洗衣代金券！");//注意此处的caitu_home要和外部传入的名字一致，大小写正确
+    }
+	
+	function doResize(){
+		var h = $("#sliderbox").height();
+		$("#paybox").css('top',h);
+		$('.checkbtn').smint({
+    	'scrollSpeed' : 1000
+    });
+	}
+</script>
+</html>

@@ -1,0 +1,18 @@
+label { font-weight:normal; }
+
+td > a { margin:0 5px; }
+
+.time-item > span { line-height:34px; margin-right:8px; }
+
+#welcome { float:right; }
+
+#options , #timebox{ text-align:right; height:34px; margin-bottom:10px; }
+#options input { float:right; width:70%; }
+#options span { float:left; line-height:34px; }
+#options .col-md-3 { float:right; }
+
+#button_query ,#button_query_numbers { float:right; }
+
+.time-item { float:right; width:263px; }
+
+td.fixed-width { max-width:300px; word-wrap: break-word; word-break: break-all; }

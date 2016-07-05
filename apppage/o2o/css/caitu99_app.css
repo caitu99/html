@@ -1,0 +1,254 @@
+﻿/*
+Credit by cpacm
+www.caitu99.com
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #576973;
+	font-family: "微软雅黑", "楷体", "Lucida Console", "萝莉体";
+	font-size: 16px;
+	background-color: #f7f7f7;
+}
+
+@media only screen and (max-width: 1000px) {
+body {
+	font-size: 16px;
+}
+}
+
+@media only screen and (max-width: 900px) {
+body {
+	font-size: 16px;
+}
+}
+
+@media only screen and (max-width: 800px) {
+body {
+	font-size: 15px;
+}
+}
+
+@media only screen and (max-width: 700px) {
+body {
+	font-size: 15px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+body {
+	font-size: 14px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+body {
+	font-size: 14px;
+}
+}
+
+@media only screen and (max-width: 400px) {
+body {
+	font-size: 13px;
+}
+}
+
+@media only screen and (max-width: 300px) {
+body {
+	font-size: 12px;
+}
+}
+a {
+	color: #000;
+	font-weight: normal;
+}
+a:active {
+	color: #e84019;
+}
+#background {
+	max-width: 1080px;
+	width: 100%;
+	margin: auto;
+	min-height: 100%;
+	background-attachment: fixed;
+}
+p {
+	padding: 0;
+	margin: 0;
+}
+/*——————————————————banner——————————————————————*/
+.rslides {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+.rslides li {
+	-webkit-backface-visibility: hidden;
+	display: none;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.rslides li:first-child {
+	position: relative;
+	display: block;
+	float: left;
+}
+.rslides img {
+	display: block;
+	height: auto;
+	float: left;
+	width: 100%;
+	border: 0;
+}
+.slide_container {
+	margin-bottom: 3.2em;
+	position: relative;
+	float: left;
+	width: 100%;
+}
+.slide {
+	position: relative;
+	list-style: none;
+	overflow: hidden;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.slide li {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.slide img {
+	display: block;
+	position: relative;
+	z-index: 1;
+	height: auto;
+	width: 100%;
+	border: 0;
+}
+.slide .caption {
+	display: block;
+	position: absolute;
+	z-index: 2;
+	font-size: 1em;
+	text-shadow: none;
+	color: #fff;
+	background: #000;
+	background: rgba(0,0,0, .5);
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0.5em 1em;
+	margin: 0;
+	max-width: none;
+}
+.slide_nav:active {
+	opacity: 1.0;
+}
+.slide_nav.next {
+	left: auto;
+	background-position: right top;
+	right: 0;
+}
+/*——————————————————checkbtn——————————————————————*/
+.checkbtn {
+	width: 100%;
+	min-width: 16em;
+	position: absolute;
+	z-index: 1000;
+	background: rgba(255,255,255,0.80);
+	-webkit-box-shadow: #666 0px 0px 2px;
+	box-shadow: #666 0px 0px 1px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+.paytext {
+	float: left;
+	width: 20%;
+	line-height: 3em;
+	margin-left: 1em;
+	min-width: 12em;
+}
+.paytext p {
+	float: left;
+	margin: auto;
+	text-align: center;
+	font-size: 1.2em;
+	color: #000000;
+}
+.ui-btn {
+	/*不让用户选中，模拟按钮，参考自github*/
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	float: right;
+	width: 8em;
+	height: 2.5em;
+	display: inline-block;
+	background-color: #ed3f00;
+	color: #fff;
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 2.5em;
+	border-radius: 4px;
+	border: none;
+	text-decoration: none;/*让按钮没有黄色的小框框，但某大神说不要干涉浏览器的行为。。。*/
+	/*outline:none;*/
+	margin-right: 1em;
+}
+.ui-btn a {
+	color: #fff;
+}
+/*———————————————————*/
+.divider {
+	height: 1em;
+	width: 100%;
+	clear: both;
+}
+/*——————————————————content——————————————————————*/
+.content {
+	padding: 1em;
+	background: #fff;
+}
+.content_block {
+	width: 100%;
+	background: #fff;
+}
+.content_block .content_title {
+	color: #898989;
+	font-size: 1em;
+}
+.content_block .content_line {
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+	padding-right: 0.8em;
+	background: #d5d5d5;
+	height: 1px;
+}
+.content_block .content_text {
+	font-size: 1em;
+	line-height: 1.8em;
+	color: #000000;
+}
+.content_block .content_text li {
+	text-decoration: none;
+	margin-left:0.5em;
+	line-height: 2em;
+	color:#E91013;
+}
+.content_block .content_text li p{
+	color:#000000;
+}
+.content_block .content_text span {
+	font-size: 0.8em;
+	color: #ed3f00;
+}
+/*—————————————————*/

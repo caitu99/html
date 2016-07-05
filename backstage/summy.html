@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="keywords" content="积分生活, ifen, caitu99, caitu" />
+		<meta name="description" content="财途积分生活，尽享每一分" />
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<!-- Mobile Devices Support @begin -->
+		<meta content="no-cache" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="0" http-equiv="expires">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- apple devices fullscreen -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<title>财途积分生活-运营后台信息查询</title>
+				
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">	
+		<link rel="stylesheet" href="css/style.css">
+		
+	    <script class="include" type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="../js/jquery.cookie.js"></script>
+		
+		<link class="include" rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css" />
+	    <script class="include" type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+	  	<script class="include" type="text/javascript" src="plugins/jqplot.barRenderer.min.js"></script>
+	  	<script class="include" type="text/javascript" src="plugins/jqplot.pieRenderer.min.js"></script>
+	  	<script class="include" type="text/javascript" src="plugins/jqplot.categoryAxisRenderer.min.js"></script>
+	  	<script class="include" type="text/javascript" src="plugins/jqplot.pointLabels.min.js"></script>
+	    
+	</head>
+
+	<body>
+		<div class="container">
+
+
+			<!-- head -->
+			<div class="row clearfix" style="margin-top:20px;">
+				<div class="col-md-12 column">
+					<div class="alert alert-success alert-dismissable alert-info">
+						<h4>
+							财途积分生活
+							
+						</h4> 
+						<p>运营后台信息查询<span id="welcome"></span></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+
+				<!-- left -->
+				<div class="col-md-2 column">
+					<div class="panel-group" id="panel-883738">
+						<div class="panel panel-default">
+							<div class="panel-heading">&nbsp;</div>
+							<div id="panel-element-890624" class="panel-collapse collapse in">
+								<div class="panel-body"><a id="summy" href="#">统计信息</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-10 column">
+					<!-- right -->
+					<table class="table table-bordered">
+						<thead id="t_head">
+							<tr>
+								<th>
+									财途积分生活
+								</th>
+								<th>
+									用户入分
+								</th>
+								<th>
+									送分
+								</th>
+								<th>
+									测试入分
+								</th>
+								<th>
+									用户出分
+								</th>
+								<th>
+									测试出分
+								</th>
+								<th>
+									入分汇总
+								</th>
+								<th>
+									出分汇总
+								</th>
+								<th>
+									财币变动
+								</th>
+								<th>
+									平台总财币
+								</th>
+							</tr>
+						</thead>
+						<tbody id="t_body">
+							<tr>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+								<td>
+								</td>
+							</tr>
+						</tbody >
+					</table>
+					<div><p style="font-weight:bold">注册用户数统计：<p/></div>
+					<div id="chart2" style="margin-top:20px; margin-left:20px; width:80%; height:480px;"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- login modal -->
+		<div id="login_modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog" style="width:400px;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title">登录</h3>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="account">Account</label>
+							<input type="email" class="form-control" id="account"/>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" class="form-control" id="password"/>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<label id="message" style="margin-right: 20px; color: red;"></label>
+						<button id="submitlogin" type="button" class="btn btn-default">确认</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+	<script class="code" type="text/javascript">$(document).ready(function(){
+        var s1 = [10763, 16283, 23675, 24173, 3743];
+        //var s2 = [7, 5, 3, 2];
+        var ticks = ['1月', '2月', '3月', '4月', '5月'];
+        
+        plot2 = $.jqplot('chart2', [s1], {
+            seriesDefaults: {
+                renderer:$.jqplot.BarRenderer,
+                pointLabels: { show: true }
+            },
+            axes: {
+                xaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer,
+                    ticks: ticks
+                }
+            }
+        });
+    });</script>
+    
+	<script type="text/javascript">
+	
+	    // for test
+	    //$.cookie("caitu99_cookie", null, {expires: -1});
+	
+	    var host = "http://gateway.caitu99.com";
+		//var host = "http://localhost";
+	    var loginurl = host + "/oauth/enterprise/login";
+	    var tokenurl = host + "/oauth/token";
+	    var apiurl = host + "/gw/oauthentry";
+	
+	    $(document).ready(function(){	
+			
+	        var token = $.cookie("caitu99_cookie");
+	        if (token == null) {
+	            $("#login_modal").modal("show");
+	        }
+	        $("#submitlogin").bind("click", function () {
+	            $("#message").text("");
+	            var account = $("#account").val();
+	            var password = $("#password").val();
+	
+	            account = $.trim(account);
+	            password = $.trim(password);
+	
+	            if (account == "" || password == "") {
+	                $("#message").text("请输入账号密码");
+	                return;
+	            }
+	            $.post(loginurl, {account: account, password: password}, function (result) {
+	                if (result.code != 0) {
+	                    $("#message").text(result.message);
+	                    return;
+	                }
+	
+	                $.post(tokenurl, {grant_type: "password", client_id: result.data.clientId,  client_secret: result.data.clientSecret, username: account, password: password, type: 4}, function (result) {
+	                    if(result.access_token) {
+	                        $.cookie('caitu99_cookie', result.access_token, {expires: 7});
+	                    } else {
+	                        $("#message").text(result.error_description);
+	                        return;
+	                    }
+	                    $("#login_modal").modal("hide");
+	                    //$("#integraldata_info").click();
+	            		$("#summy").click();
+	                });
+	            });
+	
+	        });
+
+	        $("#summy").bind("click",post_summy);
+	        
+	        function post_summy(){
+	        	var token = $.cookie("caitu99_cookie");
+	            if (token == null) {
+	                $("#login_modal").modal("show");
+	            }
+	
+	    		//var query_time = '2016-4-1 00:00:00';
+	    		
+	    		/* $.post(apiurl + "/backstage.virtualGoodsInventory/1.0/list", {access_token: token, date:query_time}, function (result) {
+	    			if(result.code == 0){
+	    				$("#t_head").html("<tr><th>汇总项</th><th>结果</th></tr>");
+	    				$("#t_body").html(summy_list_data(result.data));
+	    				$('#histogram-container').show();
+	    			}else{
+	    				tofail(result);
+	    			}
+	            }); */
+	//            	var datas={[]}; 
+	    		$("#t_head").html("<tr><th>汇总项</th><th>结果</th></tr>");
+				$("#t_body").html(summy_list_data());
+				$('#chart2').show();
+	        }
+	        
+	        post_summy();
+	        $('#timebox').hide();
+	    });
+		
+		function summy_list_data()
+		{
+			//datas = "[{'name':'注册用户数','value':'110000'},{'name':'有现金流用户数','value':'50000'},{'name':'月活跃用户比','value':'20%'}]";
+			var datas = [
+			             {"name":"注册用户数(截止到昨日)","value":"124742"},
+			             {"name":"有现金流用户数(截止到昨日)","value":"50258"},
+			             {"name":"充值用户数(截止到昨日)","value":"19327"},
+			             {"name":"上月活跃用户比","value":"23.51%"}
+			             ];
+			var result = "";
+			
+			for(var i=0;i<4;i++){   
+				result = result + "<tr>";
+				result = result + "<td>" +  datas[i].name + "</td>";
+				result = result + "<td>" +  datas[i].value + "</td>";
+				result = result + "</tr>";
+			}
+			return result;
+		}
+	
+	</script>
+	    
+	</body>
+</html>
+

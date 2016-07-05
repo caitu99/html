@@ -1,0 +1,45 @@
+label { font-weight:normal; }
+
+td > a { margin:0 5px; }
+
+.time-item > span { line-height:34px; margin-right:8px; }
+
+#welcome { float:right; }
+
+#options , #timebox{ text-align:right; height:34px; margin-bottom:10px; }
+#options input { float:right; width:70%; }
+#options span { float:left; line-height:34px; }
+#options .col-md-3 { float:right; }
+
+#button_query ,#button_query_numbers { float:right; }
+
+.time-item { float:right; width:263px; }
+
+td.fixed-width { max-width:300px; word-wrap: break-word; word-break: break-all; }
+.col-md-3 {
+    width: 38%;
+}
+.uid span{
+    float: left;
+    line-height: 34px;
+    margin-right: 8px;
+}
+.form-control1 {
+    float:left;
+    display: block;
+    width: 20%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}

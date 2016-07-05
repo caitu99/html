@@ -1,0 +1,108 @@
+﻿/*
+Credit by cpacm
+www.caitu99.com
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #576973;
+	font-family: "微软雅黑", "楷体", "Lucida Console", "萝莉体";
+	font-size: 16px;
+	background-color: #f7f7f7;
+}
+
+@media only screen and (max-width: 1000px) {
+body {
+	font-size: 16px;
+}
+}
+
+@media only screen and (max-width: 900px) {
+body {
+	font-size: 16px;
+}
+}
+
+@media only screen and (max-width: 800px) {
+body {
+	font-size: 15px;
+}
+}
+
+@media only screen and (max-width: 700px) {
+body {
+	font-size: 15px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+body {
+	font-size: 14px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+body {
+	font-size: 13px;
+}
+}
+
+@media only screen and (max-width: 400px) {
+body {
+	font-size: 10px;
+}
+}
+
+@media only screen and (max-width: 300px) {
+body {
+	font-size: 8px;
+}
+}
+div, p, li, ul {
+	margin: 0px;
+	padding: 0px;
+}
+#faq_list {
+	margin-top: 1em;
+}
+#faq_list .title {
+	background-color: #FFFFFF;
+	height: 5em;
+}
+#faq_list .title img {
+	float: left;
+	height: 3em;
+	padding: 1em;
+	padding-left: 1.2em;
+	padding-right: 1.2em;
+}
+#faq_list .title p {
+	float: left;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding-top: 1.3em;
+	color: #000;
+}
+#faq_list .title .arrow {
+	float: right;
+	height: 3em;
+
+}
+#faq_list .content {
+	padding: 1.2em;
+	display: none;
+}
+#faq_list .content p {
+	text-align: left;
+	font-size: 1.2em;
+	color: #000;
+}
+.line {
+	height: 1px;
+	width: 100%;
+	clear:both;
+	background-color: rgba(0,0,0,0.03);
+}
+
+/*—————————————————*/

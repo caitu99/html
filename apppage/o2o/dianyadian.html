@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>点呀点</title>
+<meta name="keywords" content="积分生活, ifen, caitu99, 助家" />
+<meta name="description" content="财途积分生活，尽享每一分" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<!-- Mobile Devices Support @begin -->
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Mobile Devices Support @end -->
+<link href="css/caitu99_app.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/responsiveslides.min.js"></script>
+<script type="text/javascript" 	src="js/jquery.smint.js"></script>
+</head>
+<body onload="doResize()" onresize="doResize()">
+<header>
+  <div id="sliderbox" class="slide_container">
+    <ul class="rslides" id="slider">
+      <li> <img src="images/dianyadian.png" alt="">
+        <p class="caption">只需十财分 水果送上门</p>
+      </li>
+    </ul>
+  </div>
+  <div id="paybox" class="checkbtn">
+    <div class="paytext">
+      <p>体验价：</p><p style="font-size:2em;color:#ed3f00; line-height:1.35em">10&nbsp;</p><p>财分</p>
+    </div>
+    <div class="ui-btn"> <a style="text-decoration:none;" href="#" onClick="getTicket()">立即兑换</a> </div>
+  </div>
+</header>
+<div class="divider"></div>
+<div class="content" >
+  <div class="content_block">
+    <div class="content_title" >商品简介：</div>
+    <div class="content_line"></div>
+    <div class="content_text">点呀点9+10元水果抵价券：
+      <li><p>在点呀点App选购新鲜水果立减12元</p></li>
+      <li><p>免配送费，2小时内到货（10元起送）</p></li>
+      <li><p>财途用户可再获四张5元水果抵价券</p></li>
+      <p>提供商：点呀点【www.dianyadian.com】<br />
+        通过移动互联网重新定义水果零售，让生活更简单</p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<div class="content">
+  <div class="content_block">
+    <div class="content_title">兑换需知：</div>
+    <div class="content_line"></div>
+    <div class="content_text">
+      <p><span>使用范围<br />
+        </span>上海（偏远郊县除外）、杭州（偏远郊县除外）、湖州主城区、北京深圳广州大部分城区（详细以打开点呀点app实时地理位置定位为准）</p>
+      <p><span>兑换有效期<br />
+        </span>兑换之日起三个月以内有效</p>
+      <p><span>兑换流程<br />
+        </span>1、用户点击【立即兑换】获得【兑换码】（已注册过点呀点的老用户请直接跳过第二步）；<br />
+        2、在应用商店下载<a href="http://cdn.h5.dianyadian.com/StoreActivity/download/four" style="color:black">点呀点App</a>，注册时邀请码一栏务必输入：vip132（财途用户专属码）；<br />
+        3、登陆点呀点，点击【我的】 →【现金券】 →找到【如有兑换码，请到这里兑换】字样，点击进入→输入【兑换码】完成兑换；</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="content" >
+  <div class="content_block">
+    <div class="content_title" >商户简介：</div>
+    <div class="content_line"></div>
+    <div class="content_text" >
+      <p>点呀点通过移动互联网的风口重新定义水果零售，力图给新一代的年轻人，在买水果、吃水果这件事上有更多新颖的、好玩的选择。点呀点力争快速实现新移动时代的线上果业品牌No.1，做到主要城市全覆盖，直至全国。</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+<div class="content">
+  <div class="content_block">
+    <div class="content_title">注意事项：</div>
+    <div class="content_line"></div>
+    <div class="content_text">
+      <p style="color:#8c8c8c">1、12元抵价券限新用户首次使用，必须是用户注册时邀请码一栏输入：vip132（财途用户专属码）方能获得。另外四张5元抵价券为满20减5优惠券，新老用户都能用；<br />
+        2、该抵价券每个订单只能使用一张，下单后即按面值自动扣减；<br />
+        3、该抵价券不能跟其他优惠券同时使用；<br />
+        4、如有疑问请联系点呀点客服：400-826-1418；<br />
+        5、本抵价券由本应用及e袋洗提供，与苹果公司及其它设备生产方无关；</p>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+$(function () {
+    $("#slider").responsiveSlides({
+    auto: true,
+    pager: false,
+    nav: true,
+    speed: 500,
+    // 对应外层div的class : slide_container
+    namespace: "slide"
+    });
+});
+</script>
+<script type="text/javascript">
+    //调用原生app方法
+    function getTicket()
+    {
+	    window.location.href= "http://www.caitu99.com";
+        caitu_o2o.getTicket("10财分，水果送上门！");//注意此处的caitu_o2o要和外部传入的名字一致，大小写正确
+    }
+	
+	function doResize(){
+		var h = $("#sliderbox").height();
+		$("#paybox").css('top',h);
+		$('.checkbtn').smint({
+    	'scrollSpeed' : 1000
+    });
+	}
+</script>
+</html>

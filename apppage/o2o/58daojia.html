@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>58到家</title>
+<meta name="keywords" content="积分生活, ifen, caitu99, 助家" />
+<meta name="description" content="财途积分生活，尽享每一分" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<!-- Mobile Devices Support @begin -->
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Mobile Devices Support @end -->
+<link href="css/caitu99_app.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/responsiveslides.min.js"></script>
+<script type="text/javascript" 	src="js/jquery.smint.js"></script>
+</head>
+<body onload="doResize()" onresize="doResize()">
+<header>
+  <div id="sliderbox" class="slide_container">
+    <ul class="rslides" id="slider">
+      <li> <img src="images/58daojia.png" alt="">
+        <p class="caption">58到家：1小时上门家庭保洁服务代金券30元</p>
+      </li>
+    </ul>
+  </div>
+  <div id="paybox" class="checkbtn">
+    <div class="paytext">
+      <p>体验价：</p><p style="font-size:2em;color:#ed3f00; line-height:1.35em">10&nbsp;</p><p>财分</p>
+    </div>
+    <div class="ui-btn"> <a style="text-decoration:none;" href="#" onClick="getTicket()">立即兑换</a> </div>
+  </div>
+</header>
+<div class="divider"></div>
+<div class="content" >
+  <div class="content_block">
+    <div class="content_title" >商品简介：</div>
+    <div class="content_line"></div>
+    <div class="content_text"> 1小时上门家庭保洁服务：
+      <li><p>12色清洁布，分区使用，安全卫生</p></li>
+      <li><p>全套专业工具，全方位0死角</p></li>
+      <p>提供商：58到家【www.daojia.com】<br />
+        我们提供的不仅仅是服务，更是一种简单、美好、轻松的全新生活方式。</p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<div class="content">
+  <div class="content_block">
+    <div class="content_title">兑换需知：</div>
+    <div class="content_line"></div>
+    <div class="content_text">
+      <p><span>使用范围<br />
+        </span>杭州地区使用（上城区、下城区、西湖区、拱墅区、江干区、滨江区、萧山区、余杭区</p>
+      <p><span>兑换有效期<br />
+        </span>2015年11月20日之前有效</p>
+      <p><span>兑换流程<br />
+        </span>1.用户点击【立即兑换】，输入支付密码后获得【兑换码】；<br />
+        2、<a href="http://daojia.58.com/shareApp.html?from=groupmessage&isappinstalled=0" style="color:black">下载58到家App</a>  → 点击右下角（我的）  → 点击（代金券）  → 输入（兑换码）获得30元日常保洁红包；<br />
+        3.直接首页下单，选择使用30元代金券即可；</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="divider"></div>
+<div class="content">
+  <div class="content_block">
+    <div class="content_title">注意事项：</div>
+    <div class="content_line"></div>
+    <div class="content_text">
+      <p style="color:#8c8c8c">1.本代金卡可直接抵扣30元家庭保洁服务费，超出部分按照30元/小时收取（仅限首次下单客户使用）；<br />
+        2.如需服务，请提前一天预约（本服务不包括开荒、洗衣做饭、天花板、外窗及油烟机内部拆洗）；<br />
+        3.家庭保洁服务时间2小时起，阿姨自带清洁剂另加5元/小时，每次服务限使用一张券；<br />
+        4.本代金券不得兑换现金，不设找零，不得与其他优惠活动一起使用；<br />
+        5.本券每用户每周限领两张；<br />
+        6.本券最终解释权归58到家所有；<br />
+        7.本活动奖品由本应用及58到家提供，与苹果公司无关；<br />
+        </p>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+$(function () {
+    $("#slider").responsiveSlides({
+    auto: true,
+    pager: false,
+    nav: true,
+    speed: 500,
+    // 对应外层div的class : slide_container
+    namespace: "slide"
+    });
+});
+</script>
+<script type="text/javascript">
+    //调用原生app方法
+    function getTicket()
+    {
+	    window.location.href= "http://www.caitu99.com";
+        caitu_o2o.getTicket("1小时上门家庭保洁服务！");//注意此处的caitu_o2o要和外部传入的名字一致，大小写正确
+    }
+	
+	function doResize(){
+		var h = $("#sliderbox").height();
+		$("#paybox").css('top',h);
+		$('.checkbtn').smint({
+    	'scrollSpeed' : 1000
+    });
+	}
+</script>
+</html>
